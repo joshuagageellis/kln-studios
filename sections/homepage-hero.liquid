@@ -1,0 +1,81 @@
+{{ 'section-homepage-hero.css' | asset_url | stylesheet_tag }}
+
+<div class="kln-hp-hero__inner kln-container kln-grid">
+  {%- if section.settings.title != blank -%}
+    <div class="kln-hp-hero__text">
+      <h1 class="kln-hp-hero__title">{{ section.settings.title }}</h1>
+      {%- if section.settings.subtitle != blank -%}
+        <p class="kln-hp-hero__subtitle">{{ section.settings.subtitle }}</p>
+      {%- endif -%}
+    </div>
+  {%- endif -%}
+
+  <div class="kln-hp-hero__gallery kln-grid">
+    {%- for block in section.blocks -%}
+      {%- if block.settings.image != blank -%}
+        <div class="kln-hp-hero__image">
+          <img src="{{ block.settings.image | img_url: 'master' }}" alt="{{ block.settings.alt }}" loading="lazy">
+        </div>
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Homepage Hero",
+  "tag": "section",
+  "class": "kln-hp-hero",
+  "limit": 1,
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle"
+    }
+  ],
+  "max_blocks": 5,
+  "blocks": [
+    {
+      "name": "Image",
+      "type": "card",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "alt",
+          "label": "Alt Text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Homepage Hero",
+      "settings": {
+        "title": "KLN Studios"
+      },
+      "blocks": [
+        {
+          "type": "card"
+        },
+        {
+          "type": "card"
+        },
+        {
+          "type": "card"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
