@@ -1,10 +1,46 @@
 {
   "sections": {
     "hero": {
-      "type": "homepage-hero"
+      "type": "homepage-hero",
+      "blocks": {
+        "card_QNqmU4": {
+          "type": "card",
+          "settings": {
+            "alt": ""
+          }
+        },
+        "card_hLdiTw": {
+          "type": "card",
+          "settings": {
+            "alt": ""
+          }
+        },
+        "card_rh9iUM": {
+          "type": "card",
+          "settings": {
+            "alt": ""
+          }
+        },
+        "card_9ypNwd": {
+          "type": "card",
+          "settings": {
+            "alt": ""
+          }
+        }
+      },
+      "block_order": [
+        "card_QNqmU4",
+        "card_hLdiTw",
+        "card_rh9iUM",
+        "card_9ypNwd"
+      ],
+      "settings": {
+        "title": "",
+        "subtitle": ""
+      }
     }
   },
   "order": [
-   "hero"
+    "hero"
   ]
 }
